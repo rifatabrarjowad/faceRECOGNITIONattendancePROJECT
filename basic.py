@@ -17,7 +17,8 @@ encodeElongTest = face_recognition.face_encodings(imgTest)[0]
 cv2.rectangle(imgTest, (faceLocTest[3], faceLocTest[0]), (faceLocTest[1], faceLocTest[2]), (255, 0, 255), 2)
 
 Results = face_recognition.compare_faces([encodeElong], encodeElongTest)
-print(Results)
+faceDis = face_recognition.face_distance([encodeElong], encodeElongTest)
+print(Results, faceDis)
 
 
 cv2.imshow('elon', imgElong)
