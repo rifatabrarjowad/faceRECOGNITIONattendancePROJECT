@@ -1,6 +1,13 @@
 import numpy as np
 import cv2
 import face_recognition
+import os
+
+path = 'ImagesAttendance'
+images = []
+classNames = []
+myList = os.listdir(path)
+print(myList)
 
 imgElong = face_recognition.load_image_file('ImagesBasic/elon.jpg')
 imgElong = cv2.cvtColor(imgElong, cv2.COLOR_BGR2RGB)
