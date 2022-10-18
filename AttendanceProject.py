@@ -8,8 +8,11 @@ images = []
 classNames = []
 myList = os.listdir(path)
 print(myList)
+for cl in myList:
+    curImg = cv2.imread(f'{path}/{cl}')
+    images.append(curImg)
+    classNames.append(os.path.splitext(cl)[0])
+print(classNames)
 
-imgElong = face_recognition.load_image_file('ImagesBasic/elon.jpg')
-imgElong = cv2.cvtColor(imgElong, cv2.COLOR_BGR2RGB)
-imgTest = face_recognition.load_image_file('ImagesBasic/elonTest.jpg')
-imgTest = cv2.cvtColor(imgTest, cv2.COLOR_BGR2RGB)
+
+
